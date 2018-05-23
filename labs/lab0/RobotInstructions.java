@@ -27,7 +27,7 @@ public class RobotInstructions  {
 		 * You will add instructions at the end of the code to cause the robot to move
 		 * as you desire.
 		 */
-		robot.forward(60);
+		robot.forward(30);
 		robot.turnLeft(90);
 		robot.forward(23);
 		robot.turnRight(90);
