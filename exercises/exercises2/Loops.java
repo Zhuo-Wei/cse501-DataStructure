@@ -1,8 +1,12 @@
 package exercises2;
 
+import cse131.ArgsProcessor;
+
 public class Loops {
 
 	public static void main(String[] args) {
+		ArgsProcessor ap = new ArgsProcessor(args);
+	
 		//
 		// Some helpful information:
 		//    System.out.print(i);
@@ -43,7 +47,10 @@ public class Loops {
 		
 		// 0 to 9 inclusively
 		//    produces  0 1 2 3 4 5 6 7 8 9
-		
+		int t = 0;
+				while (t<=9);
+				 t= t+1;
+		System.out.println( t);
 		
 		// 1 to 10 inclusively
 		//    produces 1 2 3 4 5 6 7 8 9 10
