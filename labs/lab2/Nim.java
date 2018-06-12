@@ -21,7 +21,7 @@ public class Nim {
 				}
 				int remainH = sticks;
 				sticks = remainH - humanS;
-				
+			
 				System.out.println("Round "+ round +", "+ remainH + " sticks at start, human took "+ humanS+", so " + sticks + " sticks remain");
 				round++;
 				int computerS =1;
@@ -31,10 +31,11 @@ public class Nim {
 	        		int remainC = sticks;
 				if (sticks>0) {
 		        	sticks = sticks - computerS;
-		        	round++;
+		        	
 				//Round 0, 7 sticks at start, computer took 2, so 5 sticks remain
 				    System.out.println("Round "+ round + ", "+ remainC + " sticks at start, computer took "+ computerS+", so " + sticks + " sticks remain");
 		       }else System.out.println();
+				round++;
 				
 			}
 			 if (round%2==0)
@@ -61,11 +62,12 @@ public class Nim {
 					}
 					int remainH = sticks;
 		        	int round2= round;
-		        	round++;
+		        
 		        	sticks = sticks - humanS;
 				//Round 0, 7 sticks at start, computer took 2, so 5 sticks remain
 				    System.out.println("Round "+ round2 + ", "+ remainH + " sticks at start, human took "+ humanS+", so " + sticks + " sticks remain");
 		       }else System.out.println();
+				round++;
 				
 			}
 			 if (round%2==0)
