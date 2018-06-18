@@ -31,13 +31,13 @@ public class Dice {
 		for(int i=0;i<count.length;i++) {
 			count[i]=0;
 		}
-		double t=1/T;
+		double t=1.0/(double)T;
 		for(int i=0;i<a.length;i++) {
 			count[a[i]]=count[a[i]]+t;
 			
 		}
 		for(int i=D;i<count.length;i++) {
-			System.out.println("Sum value "+ i+" appears "+ count[i]+" times"+ 1/T);
+			System.out.println("Sum value "+ i+" appears "+ count[i]+" times of total times");
 		}
 		
 		
