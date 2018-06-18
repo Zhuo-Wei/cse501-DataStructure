@@ -1,0 +1,14 @@
+36; int	
+56.0; double	
+'abc45"; string	
+"9abc"; string	
+true; boolean	
+"int x = 7;
+int y = 2;
+x = 10;
+boolean z = x < y;"	
+int	double	string	boolean	string
+
+Total: 100 / 100
+
+Great job!
