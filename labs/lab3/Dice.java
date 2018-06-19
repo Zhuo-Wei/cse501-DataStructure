@@ -27,19 +27,29 @@ public class Dice {
 			System.out.println(a[t]);
 		}
 		double[] count = new double[6*D+1];
+		int[] f= new int[6*D+1];
 		// initial every value to be 0
 		for(int i=0;i<count.length;i++) {
 			count[i]=0;
+			f[i]=0;
 		}
+		
 		double t=1.0/(double)T;
 		for(int i=0;i<a.length;i++) {
 			count[a[i]]=count[a[i]]+t;
 			
 		}
-		for(int i=D;i<count.length;i++) {
-			System.out.println("Sum value "+ i+" appears "+ count[i]+" times of total times");
-		}
 		
+		for(int i=0;i<a.length;i++) {
+			f[a[i]]=f[a[i]]+1;
+		}	
+		
+		for(int j=D;j<count.length;j++) {
+			if(f[j]>0) {
+			System.out.println("Sum value "+ j +" appears "+ f[j] +" times and in frequency "+ count[j]);
+		
+			}
+		}
 		
 	
 	}
