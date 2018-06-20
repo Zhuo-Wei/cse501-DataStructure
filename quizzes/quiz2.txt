@@ -1,0 +1,19 @@
+"	for(int i=1;i<9;i++) {
+			int z = i*4;
+			System.out.println(z);
+	}"
+    
+    " int x = ap.nextInt(""Enter x:""); 
+int y = ap.nextInt(""Enter y:""); 
+int z = ap.nextInt(""Enter z:"");
+if (x==y||y==z) {
+	if (x==y&&y==z) {
+		System.out.println(""No match"");
+	}
+	else System.out.println(""Two match"");
+}
+else System.out.println(""No match"");"
+
+Great job!
+
+Total: 100 / 100
