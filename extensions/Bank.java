@@ -7,7 +7,7 @@ public class Bank {
 		ArgsProcessor ap = new ArgsProcessor(args);
 		System.out.println("Day     Type       amount     balance");
 		double balance=4000.00;
-		double amount=0;
+		double amount=0.00;
 	    for(int i=0;i<30;i++) {
 	    	double x=Math.random();
 	    	int day=i+1;
