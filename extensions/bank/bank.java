@@ -15,7 +15,7 @@ public class bank {
 			    	int day=i+1;
 			    	if(x>0.5) {
 						balance=balance+200.50;
-						amount=200.50;
+						amount= 200.50;
 						
 					}
 					else { amount=100.00;

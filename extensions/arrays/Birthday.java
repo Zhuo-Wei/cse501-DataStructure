@@ -14,7 +14,7 @@ public class Birthday {
 			}
 	int sum=0;
 	double f = 1.0;
-	for(int i=0;i<12;i++) {
+	for(int i=0 ;i<12;i++) {
 		sum=0;
 		for(int j=0;j<31;j++) {
 			sum = cal[i][j] +sum;
