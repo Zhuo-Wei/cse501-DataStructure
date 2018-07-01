@@ -6,6 +6,7 @@ public class WaitPoint {
 
 	public static void main(String[] args) {
 		// wait for the mouse to be pressed and released
+		if (StdDraw.mousePressed())
 
 		// here, the mouse has been pressed
 
