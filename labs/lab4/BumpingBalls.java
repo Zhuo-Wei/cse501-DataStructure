@@ -12,9 +12,9 @@ public class BumpingBalls {
 	public static void main(String[] args) {
     	
     	ArgsProcessor ap = new ArgsProcessor(args);
-    	int N = ap.nextInt("How many balls do you want");
+    	int N = ap.nextInt("How many balls  do you want");
     	int T = ap.nextInt("How many times  do you want");
-        int pause=50;
+        int pause=51;
         // set the scale of the coordinate system
         StdDraw.setXscale(0.0, 1.0);
         StdDraw.setYscale(0.0, 1.0);
