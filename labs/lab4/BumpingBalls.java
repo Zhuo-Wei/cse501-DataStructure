@@ -1,8 +1,10 @@
 package lab4;
 
 import java.awt.Color;
+import java.io.FileInputStream;
 
 import cse131.ArgsProcessor;
+import sedgewick.StdAudio;
 import sedgewick.StdDraw;
 
 public class BumpingBalls {
@@ -50,10 +52,10 @@ public class BumpingBalls {
             // update position
             
             // bounce off wall according to law of elastic collision
-            	if (Math.abs(rx[i] + vx[i]) > 1.0 - radius) vx[i] = -vx[i];
-            	if (Math.abs(rx[i] + vx[i]) < 0 +radius) vx[i] = -vx[i];
-            	if (Math.abs(ry[i]+ vy[i]) > 1.0 - radius) vy[i] = -vy[i];
-            	if (Math.abs(ry[i] + vy[i]) < 0 + radius) vy[i] = -vy[i];
+            	if (Math.abs(rx[i] + vx[i]) > 1.0 - radius-0.01) vx[i] = -vx[i];
+            	if (Math.abs(rx[i] + vx[i]) < 0 +radius+0.01) vx[i] = -vx[i];
+            	if (Math.abs(ry[i]+ vy[i]) > 1.0 - radius-0.01) vy[i] = -vy[i];
+            	if (Math.abs(ry[i] + vy[i]) < 0 + radius+0.01) vy[i] = -vy[i];
           
             
             	rx[i] = rx[i] + vx[i]; 
@@ -64,14 +66,13 @@ public class BumpingBalls {
             	for(int j= i; j<N;j++) {
             		if (!(i==j)) {
             			if(Math.pow((rx[i]-rx[j]),2) + Math.pow((ry[i]-ry[j]),2)<= 0.0016){
-            				if ((vx[i]>0&&vx[j]<0)||(vx[j]>0&&vx[i]<0)) {
-            					vx[i] = -vx[i];
-            					vx[j] = -vx[j];
-            				}
-            				if ((vy[i]>0&&vy[j]<0)||(vy[j]>0&&vy[i]<0)) {
-            					vy[i] = -vy[i];
-            					vy[j] = -vy[j];
-            				}
+            				StdAudio.play("sound/bonk02.au");
+            				double x = rx[i];
+            				double y = ry[i];
+            				rx[i]=rx[j];
+            				rx[j]=x;
+            				ry[i]=ry[j];
+            				ry[j]=y;	
             			}
             		}
             	}
