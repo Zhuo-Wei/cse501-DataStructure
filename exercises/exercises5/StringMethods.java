@@ -16,12 +16,5 @@ public class StringMethods {
 		return s + s;
 	}
 	
-	public static void main(String[] args) {
-		
-		//
-		// Testing the methods
-		//
-		System.out.println(selfConcat("echo"));
-	}
 
 }
