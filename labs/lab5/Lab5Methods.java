@@ -15,16 +15,16 @@ public class Lab5Methods {
 	}
 	public static double harmonicSum(int n) {
 		double sum = 0;
-		while(n>0) {
+		
 			for(int i = 1; i < n+1; i++) {
 				sum = sum+1.0/i;
 			}
-		}
+	
 		return sum;
 	}
 	public static double geometricSum(int k) {
 		//RETURN VALUE: the sum 1 + 1/2 + 1/4 + 1/8 + .. + 1/Math.pow(2,k)
-		int sum =0;
+		double sum =0;
 		while(k >= 0){
 			sum += (1 / Math.pow(2, k));
 			k--;
@@ -46,9 +46,20 @@ public class Lab5Methods {
 		int sum=0;
 		int i=0;
 		if (k!=0&&j!=0) {
-			while( i<j) {
-				sum=sum+k;
-				i++;
+			if (j>0&&k>0) {
+				 return multPos(k, j);
+			}
+			else {
+				if(j<0&&k<0) {
+					return multPos(-k, -j);
+				}
+				else if(j<0&&k>0) {
+					return -multPos(k, -j);
+				}
+				else if(k<0&&j>0) {
+					return -multPos(-k, j);
+				}
+				
 			}
 		}
 		else sum=0;
@@ -58,7 +69,8 @@ public class Lab5Methods {
 		int sum=1;
 		if (k>0) {
 			while(k>0) {
-				sum = sum*k;
+				sum = sum*n;
+				k--;
 			}
 		}
 		return sum;
