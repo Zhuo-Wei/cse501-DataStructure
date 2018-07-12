@@ -10,4 +10,5 @@ public class FactorialNoBaseCase {
 		int ans = factorial(2);
 		System.out.println("Answer is " + ans);
 	}
+	
 }
