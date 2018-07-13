@@ -1,0 +1,25 @@
+"import sedgewick.StdIn;
+
+
+public class Quiz4 {
+	
+	public static void main(String[] args) {
+		
+		System.out.println(""Please enter your name:"");
+		String name = StdIn.readString();
+		System.out.println(""Please enter your age:"");
+		int age = StdIn.readInt();
+		if(age<0) {
+			System.out.println(""Age cannot be negative, please enter your age:"");
+			age=StdIn.readInt(); 
+		}
+		
+		System.out.println(""Your name is "" + name+"", and you are "" + age+"" years old."");
+		
+	}
+
+}"
+
+It is possible for users to enter a negative age multiple times, unfortunately your code will only detect it once. (-10)
+
+Total: 90 / 100
