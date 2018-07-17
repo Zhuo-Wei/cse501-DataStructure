@@ -49,7 +49,7 @@ public class Triangles {
 		tri(x1,y1);
 		tri(x2,y2);
 		tri(x3,y3);
-		StdDraw.pause(100);
+		StdDraw.pause(50);
 	}
 	
 	public static void main(String[] args) {

@@ -46,7 +46,7 @@ public class Methods {
 		ArgsProcessor ap = new ArgsProcessor(args);
 
 	    System.out.println(f(99));
-
+	    System.out.println(f(87));
 
 	    System.out.println(g(1,0));
 
