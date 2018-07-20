@@ -1,0 +1,9 @@
+"public static double circleArea(double r) {
+	return Math.pow(r, 2)*3.1415926;
+}"	double area=circleArea(5.2);	
+TRUE	
+FALSE	
+TRUE	(We have seen examples of methods without input parameters in previous exercises. Go back and see if you can find them -10)
+FALSE
+
+Total: 90 / 100
