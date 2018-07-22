@@ -69,7 +69,7 @@ public class Filters {
 	//from 256 to 2, by returning either 0 or 255 based on the original value.
 	// USED IN: posterize
 	public static int posterize(int a) {
-		int x=a/255;
+		int x=a/128;
 		return x*255;
 	}
 
@@ -143,7 +143,32 @@ public class Filters {
 	 * @return
 	 */
 	public static Color bgSubtract(Color source1Color, Color source2Color, int tolerance) {
-		return Color.black;
+	
+		int red1 = source1Color.getRed(); 
+		int green1 = source1Color.getGreen(); 
+		int blue1 = source1Color.getBlue();
+	
+		int red2 = source2Color.getRed(); 
+		int green2 = source2Color.getGreen(); 
+		int blue2 = source2Color.getBlue();
+		
+		int red = red1-red2;
+		int blue = blue1- blue2;
+		int green = green1-green2;
+		if(red<0) {
+			red= -red;
+		}
+		if(green<0) {
+			green= -green;
+		}
+		if(blue<0) {
+			blue= -blue;
+		}
+		if (red<tolerance||(green<tolerance)||(blue<tolerance)) {
+			return Color.blue;
+		}
+		else return source1Color;
+		
 
 	}
 
@@ -155,7 +180,11 @@ public class Filters {
 	//second image if the color from the first image is blue; otherwise returns
 	//the color from the first image.
 	public static Color bgReplace(Color s1Color, Color s2Color) {
-		return genRandomColor();
+		if (s1Color== Color.blue) {
+			return s2Color;
+		}
+		else return s1Color;
+	
 	}
 
 }
