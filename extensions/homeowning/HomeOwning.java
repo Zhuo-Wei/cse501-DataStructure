@@ -23,11 +23,11 @@ public class HomeOwning {
 			+ "Rent per year: " +yRent+"\n"
 			+ "Rent per week:"+ wRent+"\n\n"
 			+ "Interest paid per year: " + yInterest+"\n"
-			+ "Interest paid per week: " + wInterest);
+			+ "Interest paid per week: " + wInterest+"\n");
 		if(yRent<yInterest ) {
-			System.out.println("I should rent");
+			System.out.println("I should rent"+"\n");
 		}
-		else System.out.println("I should buy");
+		else System.out.println("I should buy"+"\n");
 		//Vanguard Crossing is located in the Zip Code 63104
 		//Rent per year: 7200
 		//Rent per week: 138.46
@@ -36,7 +36,13 @@ public class HomeOwning {
 		//Interest paid per week: 223.93
 
 		//I should rent
-		
+		int newRent=980;
+		int newyRent = 12*980;
+		System.out.println("The new rent per year: "+newyRent);
+		if(newyRent<yInterest ) {
+			System.out.println("I should rent");
+		}
+		else System.out.println("I should buy");
 
 	}
 

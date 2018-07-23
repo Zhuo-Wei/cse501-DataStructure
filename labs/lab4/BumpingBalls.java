@@ -40,7 +40,8 @@ public class BumpingBalls {
         	}
         	else vy[i] = -Math.random()*0.02;
         	     // velocity
-        	 StdDraw.filledCircle(rx[i], ry[i], radius); 
+        	// StdDraw.filledCircle(rx[i], ry[i], radius); 
+        	StdDraw.picture(rx[i], ry[i],  "images/icons/flag.png");
         	// main animation loop
            
         }
@@ -76,7 +77,8 @@ public class BumpingBalls {
             			}
             		}
             	}
-            	StdDraw.filledCircle(rx[i], ry[i], radius);
+            	//StdDraw.filledCircle(rx[i], ry[i], radius);
+            	StdDraw.picture(rx[i], ry[i],  "images/icons/flag.png");
             }
             StdDraw.show(pause); 
         }
