@@ -6,7 +6,7 @@ public class Student {
 	    //Student ID
 	    //Credits
 	    //GPA
-		private String fName,sName;
+		private String fName,sName,Name;
 		private int StudentID,Credits;
 		private double GPA;
 		
@@ -19,14 +19,25 @@ public class Student {
 			StudentID = studentID;
 			Credits=0;
 			GPA=0.00;
+			Name= fName+" " + sName;
 					
 		}
 
 		public String getName() {
-			return fName+sName;
+			return Name;
 		}
 
-		
+		public void setName(String Name) {
+			this.Name = Name;
+		}
+
+		public int getStudentID() {
+			return StudentID;
+		}
+
+		public void setStudentID(int studentID) {
+			StudentID = studentID;
+		}
 
 		public double getGPA() {
 			return GPA;
@@ -67,9 +78,20 @@ public class Student {
 			}
 		
 		}
+		public Student createLegacy( Student parent) {
+			Student cl= new Student(this.getName(), parent.getName(), this.getStudentID()+parent.getStudentID());
+			cl.setGPA((this.getGPA()+parent.getGPA())/2);
+			if(this.getCredits()>parent.getCredits()) {
+				cl.setCredits(this.getCredits());
+			}
+			else {cl.setCredits(parent.getCredits());}
+			return cl;
+		}
 
-
-
+		//toString() - returns the students full name and student ID
+		public String toString() {
+		    return Name+" "+ StudentID;
+		}
 
 
 		public static void main(String[] args) {
