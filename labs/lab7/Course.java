@@ -6,8 +6,9 @@ public class Course {
 	//Number of seats
 	//Roster of Students
 	private String Name;
-	private int Credits, Seats, RemainingSeats, sNumber;
-	private String[] rStudent= new String[Seats] ;
+	private int Credits, Seats, RemainingSeats;
+	private String[] rStudent  ;
+	private double aveGPA;
 	
 	
 	
@@ -16,17 +17,21 @@ public class Course {
 		Name = ""+ name;
 		Credits = credits;
 		Seats = seats;
-		RemainingSeats= Seats-sNumber;
-		sNumber=0;
+		RemainingSeats= Seats;
+	
+		rStudent= new String[Seats];
 		
 	}
 	public String getName() {
 		return Name;
 	}
-	public void setName(String name) {
-		Name = name;
-	}
 	
+
+	
+	
+	public int getRemainingSeats() {
+		return RemainingSeats;
+	}
 	public String[] getrStudent() {
 		return rStudent;
 	}
@@ -38,44 +43,32 @@ public class Course {
 	public int getCredits() {
 		return Credits;
 	}
-	public void setCredits(int credits) {
-		Credits = credits;
-	}
-	public int getSeats() {
-		return Seats;
-	}
-	public void setSeats(int seats) {
-		Seats = seats;
-	}
-	
-	
-	public int getRemainingSeats() {
-		return RemainingSeats;
-	}
-	public void setRemainingSeats(int remainingSeats) {
-		RemainingSeats = remainingSeats;
-	}
+
 	
 	public boolean addStudent(Student n) {
-		for(int i=0; i<sNumber; i++) {
-			if(rStudent[i]==n.getName()) {
+		
+		if(RemainingSeats==0) {
 				return false;
 			}	 
-		}
 		
-		rStudent[sNumber]=n.getName();
-		sNumber=sNumber +1;
+		rStudent[Seats- RemainingSeats]=n.getName();
+		aveGPA= aveGPA+ n.getGPA(); 
 		RemainingSeats= RemainingSeats-1;
 		return true;
 		
 		
 	}
 	public double averageGPA() {
-		double sum=0;
-		if(int i=0;i< this.getSeats(); i ++) {
-			sum= sum+ 
-		}
+		return aveGPA/(Seats- RemainingSeats);
 	}
+	@Override
+	
+	public String toString() {
+		return "Course [Name=" + Name + ", Credits=" + Credits + "]";
+	}
+	
+
+	
 	
 
 
