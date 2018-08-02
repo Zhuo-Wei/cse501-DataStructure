@@ -51,6 +51,17 @@ public class Time {
 			return false;
 		return true;
 	}
+	public boolean isEarlierThan(Time t) {
+		if(this.hour<t.hour) {
+			return true;
+		}
+		else {
+			if(this.minute<t.minute) {
+				return true;
+			}
+			else return false;
+		}
+	}
 	
 
 
