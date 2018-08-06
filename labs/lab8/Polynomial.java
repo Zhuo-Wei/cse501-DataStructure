@@ -6,20 +6,40 @@ import java.util.LinkedList;
 public class Polynomial {
 
 	final private LinkedList<Double> list;
+//	double sum=0;
 
 	/**
 	 * Constructs a Polynomial with no terms yet.
 	 */
-	public Polynomial(LinkedList<Double> list) {
-		
-		LinkedList<Double> list = new LinkedList<Double>();
+	public Polynomial() {
+	// Set the instance variable (list) to be a new linked list of Double type
+	list = new LinkedList<Double>();
+	
 	}
 
-	public String toString() {
-		return "A polynomial"; // FIXME
-	}
 
 	
+
+	@Override
+	public String toString() {
+		String n="";
+		for(int i=0; i<list.size();i++) {
+			if (i==0) {
+				n=n+list.get(i);
+			}
+			else{
+				if(list.getFirst()!=0) {
+					n=n+ "+"+list.get(i)+"x^"+i;
+				}
+			
+			}
+		}
+		return n;
+		
+	}
+		
+
+
 
 	public Polynomial addTerm(double coeff) {
 		list.add(coeff);
@@ -27,15 +47,48 @@ public class Polynomial {
 	}
 
 	public double evaluate(double x) {
-		return Math.random();  // FIXME
+//		System.out.println("calling evaluate with x = " + x);
+		double sum = 0;
+		int i = list.size()-1;
+		while(i>=0) {
+			
+			sum = sum*x + list.get(i);
+			i--;
+		
+		}
+		return sum;
+	
 	}
 	
+	
 	public Polynomial derivative() {
-		return null;   // FIXME
+		
+		int i= 1;
+		Polynomial d = new Polynomial();
+			while(i<=list.size()-1) {
+				 d.addTerm(list.get(i)*i);
+				 i++;
+			 }
+			
+
+		return d;
+		
+		
 	}
 	
 	public Polynomial sum(Polynomial another) {
-		return null;   // FIXME
+		int i=0;
+		Polynomial s = new Polynomial();
+		int al=list.size();
+		int bl=another.list.size();
+		if(al<bl) {
+			while(i<al) {
+			 s.addTerm(list.get(i)+ another.list.get(i));
+			 i++;
+			}
+		}
+
+	return s;
 	}
 
 	/**
