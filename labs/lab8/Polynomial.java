@@ -10,21 +10,19 @@ public class Polynomial {
 	/**
 	 * Constructs a Polynomial with no terms yet.
 	 */
-	public Polynomial() {
-		//
-		// Set the instance variable (list) to be a new linked list of Double type
-		//
-		list = null;   // FIXME
+	public Polynomial(LinkedList<Double> list) {
+		
+		LinkedList<Double> list = new LinkedList<Double>();
 	}
 
 	public String toString() {
 		return "A polynomial"; // FIXME
 	}
 
+	
+
 	public Polynomial addTerm(double coeff) {
-		//
-		// FIXME
-		//
+		list.add(coeff);
 		return this;  // required by lab spec
 	}
 
