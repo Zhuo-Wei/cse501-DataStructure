@@ -77,16 +77,45 @@ public class Polynomial {
 	}
 	
 	public Polynomial sum(Polynomial another) {
-		int i=0;
+		
 		Polynomial s = new Polynomial();
 		int al=list.size();
 		int bl=another.list.size();
+	
 		if(al<bl) {
-			while(i<al) {
-			 s.addTerm(list.get(i)+ another.list.get(i));
-			 i++;
+			//for(int x = al.size; x < bl.size; x++){....}
+			for(int i=0; i<al; i++) {
+			 s.addTerm(this.list.get(i)+ another.list.get(i));
+			
 			}
+			
+		    for(int j= al; j< bl; j++) {
+		    	s.addTerm(another.list.get(j));
+		    
+		    }
+		    
 		}
+		else if(bl<al) {
+			for(int a=0; a<bl; a++) {
+				 s.addTerm(this.list.get(a)+ another.list.get(a));
+				
+				}
+			
+			    for(int b= bl; b< al; b++) {
+			    	s.addTerm(this.list.get(b));
+
+			    }
+			    
+		}
+			else {
+				for(int a=0; a<bl; a++) {
+					 s.addTerm(list.get(a)+ another.list.get(a));
+	
+					}
+			 
+			
+		}
+		
 
 	return s;
 	}
