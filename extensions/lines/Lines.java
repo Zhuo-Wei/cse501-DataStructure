@@ -1,5 +1,7 @@
 package lines;
 
+import java.awt.Color;
+
 import sedgewick.StdDraw;
 
 public class Lines {
@@ -12,7 +14,16 @@ public class Lines {
 	 * @param y2 y coordinate of ending point
 	 */
 	public static void drawLine(double x1, double y1, double x2, double y2) {
-		// FIXME -- fill in this method according to the instructions
+		if(Math.pow((x2-x1), 2)+Math.pow((y2-y1), 2)<0.00001) {
+			return;
+		}
+		StdDraw.setPenColor(Color.black);
+		StdDraw.setPenRadius(0.001);
+		double x =(x1+x2)/2;
+		double y =(y1+y2)/2;
+		StdDraw.point(x, y);
+	    drawLine(x1,y1,x,y);
+	    drawLine(x2,y2,x,y);
 	}
 	
 	
