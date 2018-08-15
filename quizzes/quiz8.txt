@@ -1,0 +1,33 @@
+"public interface Measurable{
+    public double area();
+    public double perimeter();
+}"	
+"public class Rectangle implements Measurable{
+      private double x, y, length, width;
+      public double area(){
+           return width*length;
+      }
+      public double perimeter(){
+           return 2*(width+length);
+      }
+    
+}"
+
+Constructor? (-7)
+"public class Circle implements Measurable{
+      private double x, y, radius;
+      public double area(){
+           return 3.14*radius*radius;
+      }
+      public double perimeter(){
+           return 2*3.14*radius;
+      }
+    
+}"	
+
+Constructor? (-7)
+"List<Measurable> M= new LinkedList<Measurable>();
+M.add(new Rectangle(0.3, 0.2, 4, 5));
+M.add(new Circle(0.5, 0.6, 1));"
+
+Total: 86 / 100
