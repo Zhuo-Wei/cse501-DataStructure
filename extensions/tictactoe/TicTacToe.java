@@ -12,7 +12,13 @@ public class TicTacToe  {
 	 * @return a 3x3 String[][] array with each element set to a single blank string (" ").
 	 */
 	public static String[][] genBoard() {
-		return null; // FIXME
+		String[][] ans= new String[3][3];
+		for(int i=0; i<3;i++) {
+			for(int j=0;j<3; j++) {
+				ans[i][j]=" ";
+			}
+		}
+		return ans; 
 	}
 
 	/**
@@ -34,7 +40,11 @@ public class TicTacToe  {
 	 * @param row should be between 0 and 2, inclusively
 	 */
 	public static void verifyValidRow(int row) {
-		throw new UnsupportedOperationException("You must implement this method");
+		if(row<0||row>2) {
+			throw new IllegalArgumentException("You must implement this method");
+		}
+		else return;
+		
 	}
 
 	/**
@@ -42,7 +52,10 @@ public class TicTacToe  {
 	 * @param col should be between 0 and 2, inclusively
 	 */
 	public static void verifyValidCol(int col) {
-		throw new UnsupportedOperationException("You must implement this method");
+		if(col<0||col>2) {
+			throw new IllegalArgumentException("You must implement this method");
+		}
+		else return;
 	}
 
 
@@ -81,12 +94,19 @@ public class TicTacToe  {
 	 * @return true iff the move was successful
 	 */
 	public static boolean makeMove(String player, String[][] board, int row, int col) {
+	
+		if (board[row][col]!=" ") {
+				return false;
+				}
+			
 		verifyValidPlayer(player);
 		verifyValidRow(row);
 		verifyValidCol(col);
+		board[row][col]=player;
+		return true;
 		
 		
-		return false; // FIXME
+		
 	}
 
 	/**
@@ -95,7 +115,15 @@ public class TicTacToe  {
 	 * @return true iff the board is full
 	 */
 	public static boolean boardFull(String[][] board) {
-		return true; // FIXME
+		for(int i=0; i<3;i++) {
+			for(int j=0;j<3;j++) {
+				if (board[i][j]==" ") {
+					return false;
+				}
+				
+			}
+		}
+		return true; 
 	}
 
 	/**
@@ -107,8 +135,38 @@ public class TicTacToe  {
 	 */
 	public static boolean winFor(String player, String[][] board) {
 		verifyValidPlayer(player);
+		//if(((board[0][0]==board[0][1])&&(board[0][1]==board[0][2]))||((board[1][0]==board[1][1])&&(board[1][1]==board[1][2]))||((board[2][0]==board[2][1])&&(board[2][1]==board[2][2]))||(board[0][0]==board[1][0]==board[2][0])||(board[0][1]==board[2][1]==board[1][1])||(board[0][2]==board[1][2]==board[2][2])||(board[0][0]==board[1][1]==board[2][2])||(board[0][2]==board[1][1]==board[2][0])){
 		
-		return true; // FIXME
+		for(int i=0; i<3;i++) {
+			if((board[i][0]==board[i][1])&&(board[i][1]==board[i][2])){
+				if(board[i][0]==player) {
+					return true;
+				}
+			}
+			for(int j=0; j<3; j++) {
+				if((board[0][j]==board[1][j])&&(board[1][j]==board[2][j])) {
+					if(board[0][j]==player) {
+						return true;
+					}
+				}
+				if(((board[0][0]==board[1][1])&&(board[1][1]==board[2][2]))||((board[0][2]==board[1][1])&&(board[1][1]==board[2][0]))) {
+					if(board[1][1]==player) {
+						return true;
+					}
+					
+				}
+				
+			}
+		}
+		return false;
 	}
-
 }
+				
+			
+			
+		
+	
+
+
+
+
